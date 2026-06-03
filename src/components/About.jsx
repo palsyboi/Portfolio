@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { GraduationCap, Code, Coffee, Heart } from 'lucide-react'
+import { GraduationCap, Code, Coffee, Heart, Download } from 'lucide-react'
 
 const stats = [
   { value: '3+', label: 'Years Learning' },
@@ -40,8 +40,16 @@ export default function About() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 64, alignItems: 'center' }}>
           <motion.div ref={ref} initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>
             <div style={{ position: 'relative', marginBottom: 32 }}>
-              <div style={{ width: 220, height: 220, borderRadius: 20, background: 'linear-gradient(135deg, var(--accent), var(--accent2))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 80, fontFamily: 'var(--font-display)', fontWeight: 800, color: 'white', position: 'relative', boxShadow: '0 24px 64px rgba(124,111,255,0.25)' }}>
-                JH
+              <div style={{
+                width: 220, height: 220, borderRadius: 20, overflow: 'hidden',
+                position: 'relative', boxShadow: '0 24px 64px rgba(124,111,255,0.25)',
+                border: '2px solid var(--accent)',
+              }}>
+                <img
+                  src="/portrait.png"
+                  alt="Jeff Harell Climaco"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+                />
               </div>
               <div style={{ position: 'absolute', bottom: 8, right: 0, background: 'var(--bg)', border: '2px solid var(--accent3)', borderRadius: 10, padding: '6px 14px', fontSize: 12, fontWeight: 600, color: 'var(--accent3)', display: 'flex', alignItems: 'center', gap: 6 }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent3)', display: 'inline-block' }} />
@@ -75,7 +83,15 @@ export default function About() {
               ))}
             </div>
             <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.7 }} style={{ marginTop: 32 }}>
-              <a href="#contact" className="btn btn-primary">Download CV</a>
+              <a
+                href="/CV.pdf"
+                download="Jeff_Harell_Climaco_CV.pdf"
+                className="btn btn-primary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
+              >
+                <Download size={16} />
+                Download CV
+              </a>
             </motion.div>
           </motion.div>
         </div>

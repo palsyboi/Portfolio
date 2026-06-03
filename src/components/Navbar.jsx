@@ -49,10 +49,15 @@ export default function Navbar() {
     >
       <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <div style={{
-          width: 36, height: 36, borderRadius: 8, background: 'var(--accent)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 16, color: 'white'
-        }}>JH</div>
+          width: 36, height: 36, borderRadius: 8, overflow: 'hidden',
+          border: '2px solid var(--accent)', flexShrink: 0,
+        }}>
+          <img
+            src="/portrait.png"
+            alt="Jeff Harell"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
+        </div>
         <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16, color: 'var(--text)' }}>
           Jeff Harell
         </span>

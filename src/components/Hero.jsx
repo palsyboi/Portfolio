@@ -65,7 +65,7 @@ export default function Hero() {
               </a>
             ))}
             <div style={{ width: 1, height: 24, background: 'var(--border)', margin: '0 4px' }} />
-            <span style={{ fontSize: 13, color: 'var(--text3)' }}>@jeffharell</span>
+            <span style={{ fontSize: 13, color: 'var(--text3)' }}>@jeffharell.climaco@hcdc.edu.ph</span>
           </motion.div>
         </div>
       </div>
